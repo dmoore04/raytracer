@@ -1,3 +1,6 @@
+#include "color.h"
+#include "vec3.h"
+
 #include <iostream>
 
 int main()
@@ -17,13 +20,7 @@ int main()
             auto g = double(j) / (image_height - 1);
             auto b = 0.25;
 
-            const auto MAX_COLOR = 255.999;
-
-            int ir = static_cast<int>(MAX_COLOR * r);
-            int ig = static_cast<int>(MAX_COLOR * g);
-            int ib = static_cast<int>(MAX_COLOR * b);
-
-            std::cout << ir << ' ' << ig << ' ' << ib << '\n';
+            write_color(std::cout, color{r, g, b});
         }
     }
 
