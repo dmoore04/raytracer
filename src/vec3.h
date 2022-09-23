@@ -15,9 +15,9 @@ public:
     double z() const { return e[2]; }
 
     double operator[](int i) const { return e[i]; }
-    double &operator[](int i) const { return e[i]; }
+    double &operator[](int i) { return e[i]; }
 
-    vec3 operator-() const { return vec3(-e[0] - e[1] - e[2]); }
+    vec3 operator-() const { return vec3(-e[0], -e[1], -e[2]); }
 
     vec3 &operator+=(const vec3 &v)
     {
@@ -47,15 +47,14 @@ public:
 
     double length_squared() const
     {
-        return e[0] * e[0] + e[1] * e[1] + e[2] * e[2]
+        return e[0] * e[0] + e[1] * e[1] + e[2] * e[2];
     }
 
 public:
     double e[3];
-}
+};
 
 /* Type aliases */
 using point3 = vec3; // 3D point
 using color = vec3;  // RGB color
-
 #endif
