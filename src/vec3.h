@@ -54,4 +54,8 @@ public:
     double e[3];
 }
 
+/* Type aliases */
+using point3 = vec3; // 3D point
+using color = vec3;  // RGB color
+
 #endif
