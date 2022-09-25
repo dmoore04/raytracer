@@ -3,6 +3,7 @@
 #include "color.h"
 #include "hittable_list.h"
 #include "sphere.h"
+#include "material.h"
 #include "camera.h"
 
 #include <iostream>

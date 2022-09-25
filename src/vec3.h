@@ -60,6 +60,13 @@ public:
         return vec3(random_double(min, max), random_double(min, max), random_double(min, max));
     }
 
+    inline bool near_zero() const
+    {
+        /* True if all vector dimensions are close to zero */
+        const auto s = 1e-8;
+        return (fabs(e[0]) < s) && (fabs(e[1]) < s) && (fabs(e[2]) < s);
+    }
+
 public:
     double e[3];
 };
